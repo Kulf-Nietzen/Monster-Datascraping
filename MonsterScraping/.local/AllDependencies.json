@@ -3495,9 +3495,9 @@
     "restore": {
       "projectUniqueName": "MonsterScraping",
       "projectName": "MonsterScraping",
-      "projectPath": "C:\\Users\\Kenneth\\Documents\\UiPath\\MonsterScraping\\.local",
+      "projectPath": "C:\\Users\\Kenneth\\Documents\\GitHub\\Monster-Datascraping\\MonsterScraping\\.local",
       "packagesPath": "C:\\Users\\Kenneth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kenneth\\Documents\\UiPath\\MonsterScraping\\.local"
+      "outputPath": "C:\\Users\\Kenneth\\Documents\\GitHub\\Monster-Datascraping\\MonsterScraping\\.local"
     },
     "frameworks": {
       "net461": {
