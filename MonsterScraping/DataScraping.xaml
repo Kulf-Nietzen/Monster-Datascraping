@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1156,2958</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1156,4137</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DataScrapingg_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
@@ -74,7 +74,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DataScraping" sap:VirtualizedContainerService.HintSize="1107,2893" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DataScraping" sap:VirtualizedContainerService.HintSize="1107,4072" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="endeScraping" />
       <Variable x:TypeArguments="x:Int32" Default="1" Name="counter" />
@@ -88,13 +88,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Softwareentw...'" sap:VirtualizedContainerService.HintSize="1065,2801" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="85d41513e567646b70aa9b9e9add25d9" Selector="&lt;html app='chrome.exe' title='*Monster.de' /&gt;">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1065,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Datascraping&quot;]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Softwareentw...'" sap:VirtualizedContainerService.HintSize="1065,3849" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="85d41513e567646b70aa9b9e9add25d9" Selector="&lt;html app='chrome.exe' title='*Monster.de' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1031,2655" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1031,3703" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -174,6 +175,7 @@
                 <InArgument x:TypeArguments="x:Int32">[Convert.toInt32(anzahlErgebnisse)]</InArgument>
               </Assign.Value>
             </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="989,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Anzahl Ergebnisse: &quot;+anzahlErgebnisseNum.ToString]" />
             <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 3 seconds" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="989,22" sap2010:WorkflowViewState.IdRef="Delay_1">
               <TextExpression.Namespaces>
                 <sco:Collection x:TypeArguments="x:String">
@@ -221,17 +223,18 @@
               </sap2010:WorkflowViewState.ViewStateManager>
             </Delay>
             <ui:BuildDataTable DataTable="[out_ergebnisTabelle]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="989,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Berufsbezeichnung&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Firma&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Standort&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;URL&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-            <If Condition="[anzahlErgebnisseNum &lt; 30]" sap:VirtualizedContainerService.HintSize="989,1966" sap2010:WorkflowViewState.IdRef="If_1">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="989,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Datenbank aufgebaut.&quot;]" />
+            <If Condition="[anzahlErgebnisseNum &lt; 30]" sap:VirtualizedContainerService.HintSize="989,2752" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="454,1408" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence sap:VirtualizedContainerService.HintSize="454,2194" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InterruptibleWhile DisplayName="Elemente finden" sap:VirtualizedContainerService.HintSize="412,1316" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_4">
+                  <ui:InterruptibleWhile DisplayName="Elemente finden" sap:VirtualizedContainerService.HintSize="412,2102" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_4">
                     <ui:InterruptibleWhile.Body>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1151" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1937" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="firmenNameOutput" />
                           <Variable x:TypeArguments="x:String" Name="jobBeschreibungOutput" />
@@ -274,6 +277,7 @@
                             </ui:Target>
                           </ui:GetAttribute.Target>
                         </ui:GetAttribute>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Url: &quot;+jobListingUrl]" />
                         <ui:GetValue ContinueOnError="True" DisplayName="Lese Jobbeschreibung" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_7">
                           <ui:GetValue.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4a94b641-c877-4734-b812-882f76744f9b" InformativeScreenshot="f6cafb5b3ed98cfe38540481e3bd59f6" Selector="&lt;html app='chrome.exe' title='*Monster.de' /&gt;&lt;webctrl tag='A' isleaf='*' parentclass='title' idx='{{counter}}' /&gt;" TimeoutMS="[timer]">
@@ -286,6 +290,7 @@
                             <OutArgument x:TypeArguments="x:String">[jobBeschreibungOutput]</OutArgument>
                           </ui:GetValue.Value>
                         </ui:GetValue>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Berufsbezeichnung: &quot;+jobBeschreibungOutput]" />
                         <ui:GetValue ContinueOnError="True" DisplayName="Lese Firma" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_8">
                           <ui:GetValue.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ae8d1a44-c602-47e8-862a-8038cad58455" InformativeScreenshot="8a1378800f9ee29d2541ea842c137e07" Selector="&lt;html app='chrome.exe' title='*Monster.de' /&gt;&lt;webctrl tag='A' class='name' parentclass='company' idx='{{counter}}' /&gt;" TimeoutMS="[timer]">
@@ -298,6 +303,7 @@
                             <OutArgument x:TypeArguments="x:String">[firmenNameOutput]</OutArgument>
                           </ui:GetValue.Value>
                         </ui:GetValue>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Firma: &quot;+firmenNameOutput]" />
                         <ui:GetValue ContinueOnError="True" DisplayName="Lese Stadt" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_9">
                           <ui:GetValue.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c242ce63-5d62-400e-beb4-88d674a844ee" InformativeScreenshot="2b64bff1e31e015b2dd918d4688c4c8c" Selector="&lt;html app='chrome.exe' title='*Monster.de' /&gt;&lt;webctrl tag='A' class='name' parentclass='location' idx='{{counter}}' /&gt;" TimeoutMS="[timer]">
@@ -310,8 +316,11 @@
                             <OutArgument x:TypeArguments="x:String">[stadtNameOutput]</OutArgument>
                           </ui:GetValue.Value>
                         </ui:GetValue>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Stadt: &quot;+stadtNameOutput]" />
                         <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{jobBeschreibungOutput,firmenNameOutput,stadtNameOutput,jobListingUrl}]" DataTable="[out_ergebnisTabelle]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Inhalte: &quot; +jobBeschreibungOutput +&quot;, &quot;+firmenNameOutput+&quot;, &quot;+stadtNameOutput+&quot; und &quot;+ jobListingUrl + &quot;hinzugefügt.&quot;]" />
                         <ui:AppendRange DataTable="[out_ergebnisTabelle]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="AppendRange_4" SheetName="[in_getJobTitle]" WorkbookPath="Output.xls" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Daten in Excel schreiben.&quot;]" />
                         <ui:ClearDataTable DataTable="[out_ergebnisTabelle]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="ClearDataTable_3" />
                         <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                           <Assign.To>
@@ -336,17 +345,17 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <ui:InterruptibleWhile DisplayName="Durch mehrere Seiten blättern" sap:VirtualizedContainerService.HintSize="490,1819" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+                <ui:InterruptibleWhile Condition="[counter &lt;= anzahlErgebnisseNum]" DisplayName="Durch mehrere Seiten blättern" sap:VirtualizedContainerService.HintSize="490,2605" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
                   <ui:InterruptibleWhile.Body>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="454,1654" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="454,2440" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InterruptibleWhile DisplayName="Elemente finden" sap:VirtualizedContainerService.HintSize="412,1316" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
+                      <ui:InterruptibleWhile DisplayName="Elemente finden" sap:VirtualizedContainerService.HintSize="412,2102" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
                         <ui:InterruptibleWhile.Body>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1151" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1937" sap2010:WorkflowViewState.IdRef="Sequence_6">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="firmenNameOutput" />
                               <Variable x:TypeArguments="x:String" Name="jobBeschreibungOutput" />
@@ -389,6 +398,7 @@
                                 </ui:Target>
                               </ui:GetAttribute.Target>
                             </ui:GetAttribute>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Url: &quot;+jobListingUrl]" />
                             <ui:GetValue ContinueOnError="True" DisplayName="Lese Jobbeschreibung" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
                               <ui:GetValue.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4a94b641-c877-4734-b812-882f76744f9b" InformativeScreenshot="f6cafb5b3ed98cfe38540481e3bd59f6" Selector="&lt;html app='chrome.exe' title='*Monster.de' /&gt;&lt;webctrl tag='A' isleaf='*' parentclass='title' idx='{{counter}}' /&gt;" TimeoutMS="[timer]">
@@ -401,6 +411,7 @@
                                 <OutArgument x:TypeArguments="x:String">[jobBeschreibungOutput]</OutArgument>
                               </ui:GetValue.Value>
                             </ui:GetValue>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Berufsbezeichnung: &quot;+jobBeschreibungOutput]" />
                             <ui:GetValue ContinueOnError="True" DisplayName="Lese Firma" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
                               <ui:GetValue.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ae8d1a44-c602-47e8-862a-8038cad58455" InformativeScreenshot="8a1378800f9ee29d2541ea842c137e07" Selector="&lt;html app='chrome.exe' title='*Monster.de' /&gt;&lt;webctrl tag='A' class='name' parentclass='company' idx='{{counter}}' /&gt;" TimeoutMS="[timer]">
@@ -413,6 +424,7 @@
                                 <OutArgument x:TypeArguments="x:String">[firmenNameOutput]</OutArgument>
                               </ui:GetValue.Value>
                             </ui:GetValue>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Firma: &quot;+firmenNameOutput]" />
                             <ui:GetValue ContinueOnError="True" DisplayName="Lese Stadt" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_6">
                               <ui:GetValue.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c242ce63-5d62-400e-beb4-88d674a844ee" InformativeScreenshot="2b64bff1e31e015b2dd918d4688c4c8c" Selector="&lt;html app='chrome.exe' title='*Monster.de' /&gt;&lt;webctrl tag='A' class='name' parentclass='location' idx='{{counter}}' /&gt;" TimeoutMS="[timer]">
@@ -425,8 +437,11 @@
                                 <OutArgument x:TypeArguments="x:String">[stadtNameOutput]</OutArgument>
                               </ui:GetValue.Value>
                             </ui:GetValue>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Stadt: &quot;+stadtNameOutput]" />
                             <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{jobBeschreibungOutput,firmenNameOutput,stadtNameOutput,jobListingUrl}]" DataTable="[out_ergebnisTabelle]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Inhalte: &quot; +jobBeschreibungOutput +&quot;, &quot;+firmenNameOutput+&quot;, &quot;+stadtNameOutput+&quot; und &quot;+ jobListingUrl + &quot;hinzugefügt.&quot;]" />
                             <ui:AppendRange DataTable="[out_ergebnisTabelle]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="AppendRange_3" SheetName="[in_getJobTitle]" WorkbookPath="Output.xls" />
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Daten in Excel schreiben.&quot;]" />
                             <ui:ClearDataTable DataTable="[out_ergebnisTabelle]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="ClearDataTable_2" />
                             <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                               <Assign.To>
@@ -467,9 +482,6 @@
                       </Assign>
                     </Sequence>
                   </ui:InterruptibleWhile.Body>
-                  <ui:InterruptibleWhile.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="counter &lt;= anzahlErgebnisseNum" />
-                  </ui:InterruptibleWhile.Condition>
                 </ui:InterruptibleWhile>
               </If.Else>
             </If>
